@@ -1,0 +1,56 @@
+{
+	"bottom_navigation_tabs": {
+		"home": "Inicio",
+		"sessions": "Sesiones",
+		"videos": "Videos",
+		"profile": "Perfil"
+	},
+	"button": {
+		"continue": "Continuar",
+		"back": "Volver",
+		"confirm": "Confirmar",
+		"skip": "Ahora no",
+		"complete": "Completar"
+	},
+	"validation": {
+		"required": {
+			"name": "El nombre es obligatorio",
+			"email": "El correo es obligatorio",
+			"phone": "El teléfono es obligatorio",
+			"code": "El código es obligatorio"
+		},
+		"invalid": {
+			"email": "Ingrese un correo válido"
+		},
+		"length": {
+			"code": "El código debe tener {{length}} dígitos"
+		}
+	},
+	"fields": {
+		"name": {
+			"placeholder": "Nombre"
+		},
+		"email": {
+			"placeholder": "Correo"
+		},
+		"phone": {
+			"placeholder": "Teléfono"
+		}
+	},
+	"terms": {
+		"link": "Términos y Condiciones",
+		"privacy": "Política de Privacidad"
+	},
+	"c": {
+		"credit_package_button": {
+			"session_singular": "sesión",
+			"session_plural": "sesiones",
+			"savings": "Ahorra US$ {{amount}}"
+		},
+		"credit_purchase_bottom_sheet": {
+			"title": "{{name}},",
+			"subtitle": "no tienes créditos en este momento.",
+			"description": "Elige la mejor opción y comienza tu sesión."
+		}
+	}
+}

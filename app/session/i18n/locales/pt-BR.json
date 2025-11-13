@@ -1,0 +1,31 @@
+{
+	"s": {
+		"voice": {
+			"endSession": "Finalizar sessão",
+			"mic": {
+				"disabled": {
+					"connecting": "Conectando...",
+					"agentSpeaking": "O agente está falando"
+				},
+				"mute": "Silenciar microfone",
+				"unmute": "Desilenciar microfone",
+				"clickToSpeak": "Clique para falar",
+				"clickToMute": "Clique para silenciar"
+			}
+		}
+	},
+	"c": {
+		"voice_session_connection_animation": {
+			"title": "Conectando",
+			"description": "Estamos conectando você com seu terapeuta. Isso pode levar alguns segundos."
+		},
+		"voice_session_animated_circle": {
+			"speakToInterrupt": "Fale para\ninterromper",
+			"listening": "Estou te\nouvindo"
+		},
+		"end_session_bottom_sheet": {
+			"title": "Finalizar sessão",
+			"continue": "Continuar sessão"
+		}
+	}
+}

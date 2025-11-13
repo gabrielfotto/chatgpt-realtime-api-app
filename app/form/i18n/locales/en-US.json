@@ -1,0 +1,92 @@
+{
+	"s": {
+		"form": {
+			"steps": {
+				"1": {
+					"question": "Life Experience",
+					"options": {
+						"abandonment": "Abandonment",
+						"sexualAbuse": "Sexual Abuse",
+						"verbalAbuse": "Verbal Abuse",
+						"familyConflicts": "Family Conflicts",
+						"despair": "Despair",
+						"financialDifficulties": "Financial Difficulties",
+						"humiliations": "Humiliations",
+						"trauma": "Trauma",
+						"violence": "Violence"
+					}
+				},
+				"2": {
+					"question": "Current Disorders",
+					"options": {
+						"alcoholism": "Alcoholism",
+						"anguish": "Anguish",
+						"anorexia": "Anorexia",
+						"anxiety": "Anxiety",
+						"generalizedAnxiety": "Generalized Anxiety",
+						"lowSelfEsteem": "Low Self-Esteem",
+						"borderline": "Borderline",
+						"bulimia": "Bulimia",
+						"burnout": "Burnout",
+						"excessiveJealousy": "Excessive Jealousy",
+						"bingeEating": "Binge Eating",
+						"sexualCompulsion": "Sexual Compulsion",
+						"depression": "Depression",
+						"despair": "Despair",
+						"erectileDysfunction": "Erectile Dysfunction",
+						"financialScarcity": "Financial Scarcity",
+						"lackOfLibido": "Lack of Libido",
+						"phobias": "Phobias",
+						"failure": "Failure",
+						"frigidity": "Frigidity",
+						"insecurity": "Insecurity",
+						"fears": "Fears",
+						"moodSwing": "Mood Swings",
+						"panic": "Panic",
+						"uncontrolledAnger": "Uncontrolled Anger",
+						"remorse": "Remorse",
+						"feelingOfGuilt": "Feeling of Guilt",
+						"loneliness": "Loneliness",
+						"toc": "OCD",
+						"deepSadness": "Deep Sadness",
+						"shame": "Shame",
+						"bodyShame": "Body Shame",
+						"drugAddictions": "Drug Addictions",
+						"gamingAddictions": "Gaming Addictions"
+					}
+				},
+				"3": {
+					"question": "Physical Body",
+					"options": {
+						"allergies": "Allergies",
+						"skinDiseases": "Skin Diseases",
+						"autoimmuneDiseases": "Autoimmune Diseases",
+						"headache": "Migraine",
+						"fibromyalgia": "Fibromyalgia"
+					}
+				},
+				"4": {
+					"question": "Future Fears",
+					"options": {
+						"abandonment": "Abandonment",
+						"illnesses": "Illnesses",
+						"death": "Death",
+						"poverty": "Poverty",
+						"loneliness": "Loneliness",
+						"oldAge": "Old Age"
+					}
+				}
+			},
+			"intro": {
+				"title": "{{name}}",
+				"paragraphs": [
+					"You are about to take an important step on the path of self-knowledge.",
+					"This form was created to help you reflect on the experiences that have shaped your life and understand the challenges you face.",
+					"It is essential for us to create the best plan for your life.",
+					"Shall we begin?"
+				],
+				"buttonText": "Start my journey"
+			}
+		}
+	}
+}

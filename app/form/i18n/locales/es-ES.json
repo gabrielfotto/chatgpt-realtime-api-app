@@ -1,0 +1,92 @@
+{
+	"s": {
+		"form": {
+			"steps": {
+				"1": {
+					"question": "Experiencia de Vida",
+					"options": {
+						"abandonment": "Abandono",
+						"sexualAbuse": "Abuso Sexual",
+						"verbalAbuse": "Abuso Verbal",
+						"familyConflicts": "Conflictos Familiares",
+						"despair": "Desesperación",
+						"financialDifficulties": "Dificultades Financieras",
+						"humiliations": "Humillaciones",
+						"trauma": "Traumas",
+						"violence": "Violencia"
+					}
+				},
+				"2": {
+					"question": "Trastornos Actuales",
+					"options": {
+						"alcoholism": "Alcoholismo",
+						"anguish": "Angustia",
+						"anorexia": "Anorexia",
+						"anxiety": "Ansiedad",
+						"generalizedAnxiety": "Ansiedad Generalizada",
+						"lowSelfEsteem": "Baja Autoestima",
+						"borderline": "Borderline",
+						"bulimia": "Bulimia",
+						"burnout": "Burnout",
+						"excessiveJealousy": "Celos Excesivos",
+						"bingeEating": "Compulsión Alimentaria",
+						"sexualCompulsion": "Compulsión Sexual",
+						"depression": "Depresión",
+						"despair": "Desesperación",
+						"erectileDysfunction": "Disfunción Eréctil",
+						"financialScarcity": "Escasez Financiera",
+						"lackOfLibido": "Falta de Libido",
+						"phobias": "Fobias",
+						"failure": "Fracaso",
+						"frigidity": "Frigidez",
+						"insecurity": "Inseguridad",
+						"fears": "Miedos",
+						"moodSwing": "Cambios de Humor",
+						"panic": "Pánico",
+						"uncontrolledAnger": "Ira Incontrolada",
+						"remorse": "Remordimiento",
+						"feelingOfGuilt": "Sentimiento de Culpa",
+						"loneliness": "Soledad",
+						"toc": "TOC",
+						"deepSadness": "Tristeza Profunda",
+						"shame": "Vergüenza",
+						"bodyShame": "Vergüenza del Propio Cuerpo",
+						"drugAddictions": "Adicción a las Drogas",
+						"gamingAddictions": "Adicción a los Juegos"
+					}
+				},
+				"3": {
+					"question": "Cuerpo Físico",
+					"options": {
+						"allergies": "Alergias",
+						"skinDiseases": "Enfermedades de la Piel",
+						"autoimmuneDiseases": "Enfermedades Autoinmunes",
+						"headache": "Migraña",
+						"fibromyalgia": "Fibromialgia"
+					}
+				},
+				"4": {
+					"question": "Miedos Futuros",
+					"options": {
+						"abandonment": "Abandono",
+						"illnesses": "Enfermedades",
+						"death": "Muerte",
+						"poverty": "Pobreza",
+						"loneliness": "Soledad",
+						"oldAge": "Vejez"
+					}
+				}
+			},
+			"intro": {
+				"title": "{{name}}",
+				"paragraphs": [
+					"Estás a punto de dar un paso importante en el camino del autoconocimiento.",
+					"Este formulario fue creado para ayudarte a reflexionar sobre las experiencias que han moldeado tu vida y comprender los desafíos que enfrentas.",
+					"Es fundamental para que podamos trazar el mejor plan para tu vida.",
+					"¿Comenzamos?"
+				],
+				"buttonText": "Comenzar mi viaje"
+			}
+		}
+	}
+}

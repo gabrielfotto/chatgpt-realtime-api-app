@@ -1,0 +1,29 @@
+{
+	"s": {
+		"welcome": {
+			"title": "Bienvenido",
+			"description": "Comienza tus sesiones para procesar emociones, aliviar tensiones, promover la autoconfianza y el bienestar.",
+			"support": "Estamos aquí para escucharte y apoyarte cuando y donde quieras."
+		},
+		"buttons": {
+			"startSession": "Iniciar sesión ahora",
+			"scheduleSession": "Programar sesión"
+		},
+		"c": {
+			"schedule_session_bottom_sheet": {
+				"title": "Programa tus sesiones",
+				"date": {
+					"label": "Elige una fecha:",
+					"placeholder": "Selecciona una fecha"
+				},
+				"time": {
+					"label": "Elige una hora:",
+					"select": "Selecciona la hora",
+					"cancel": "Cancelar",
+					"confirm": "Confirmar"
+				},
+				"button": "Programar"
+			}
+		}
+	}
+}

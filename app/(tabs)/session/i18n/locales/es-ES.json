@@ -1,0 +1,27 @@
+{
+	"s": {
+		"session": {
+			"welcome": {
+				"greeting": "¡Hola, {{name}}!",
+				"question": "¿Cómo te gustaría conectarte conmigo hoy?"
+			},
+			"buttons": {
+				"chat": "Por Chat",
+				"voice": "Por Voz"
+			}
+		},
+		"choose_voice": {
+			"title": "Elige con quién te gustaría hablar hoy"
+		}
+	},
+	"c": {
+		"therapist_card": {
+			"play": "Reproducir",
+			"pause": "Pausar",
+			"choose": {
+				"female": "Elegir ella",
+				"male": "Elegir él"
+			}
+		}
+	}
+}

@@ -1,0 +1,92 @@
+{
+	"s": {
+		"form": {
+			"steps": {
+				"1": {
+					"question": "Experiência ao Longo da Vida",
+					"options": {
+						"abandonment": "Abandono",
+						"sexualAbuse": "Abusos Sexuais",
+						"verbalAbuse": "Abusos Verbais",
+						"familyConflicts": "Conflitos Familiares",
+						"despair": "Desespero",
+						"financialDifficulties": "Dificuldades Financeiras",
+						"humiliations": "Humilhações",
+						"trauma": "Traumas",
+						"violence": "Violências"
+					}
+				},
+				"2": {
+					"question": "Transtornos Atuais",
+					"options": {
+						"alcoholism": "Alcoolismo",
+						"anguish": "Angústia",
+						"anorexia": "Anorexia",
+						"anxiety": "Ansiedade",
+						"generalizedAnxiety": "Ansiedade Generalizada",
+						"lowSelfEsteem": "Autoestima Baixa",
+						"borderline": "Borderline",
+						"bulimia": "Bulimia",
+						"burnout": "Burnout",
+						"excessiveJealousy": "Ciúmes Excessivos",
+						"bingeEating": "Compulsão Alimentar",
+						"sexualCompulsion": "Compulsão Sexual",
+						"depression": "Depressão",
+						"despair": "Desespero",
+						"erectileDysfunction": "Disfunção Erétil",
+						"financialScarcity": "Escassez Financeira",
+						"lackOfLibido": "Falta de Libido",
+						"phobias": "Fobias",
+						"failure": "Fracasso",
+						"frigidity": "Frigidez",
+						"insecurity": "Insegurança",
+						"fears": "Medos",
+						"moodSwing": "Oscilações de Humor",
+						"panic": "Pânico",
+						"uncontrolledAnger": "Raiva Sem Controle",
+						"remorse": "Remorso",
+						"feelingOfGuilt": "Sentimento de Culpa",
+						"loneliness": "Solidão",
+						"toc": "TOC",
+						"deepSadness": "Tristeza Profunda",
+						"shame": "Vergonha",
+						"bodyShame": "Vergonha do Próprio Corpo",
+						"drugAddictions": "Vícios em Drogas",
+						"gamingAddictions": "Vícios em Jogos"
+					}
+				},
+				"3": {
+					"question": "Corpo Físico",
+					"options": {
+						"allergies": "Alergias",
+						"skinDiseases": "Doenças na Pele",
+						"autoimmuneDiseases": "Doenças Autoimune",
+						"headache": "Enxaqueca",
+						"fibromyalgia": "Fibromialgia"
+					}
+				},
+				"4": {
+					"question": "Medos Futuros",
+					"options": {
+						"abandonment": "Abandono",
+						"illnesses": "Doenças",
+						"death": "Morte",
+						"poverty": "Pobreza",
+						"loneliness": "Solidão",
+						"oldAge": "Velhice"
+					}
+				}
+			},
+			"intro": {
+				"title": "{{name}}",
+				"paragraphs": [
+					"Você está prestes a dar um passo importante no caminho do autoconhecimento.",
+					"Este formulário foi criado para ajudá-lo a refletir sobre as experiências que moldaram sua vida e compreender os desafios que você enfrenta.",
+					"Ele é fundamental para que possamos traçar o melhor plano para sua vida.",
+					"Vamos começar?"
+				],
+				"buttonText": "Começar minha jornada"
+			}
+		}
+	}
+}

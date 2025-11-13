@@ -1,0 +1,54 @@
+{
+	"s": {
+		"login": {
+			"title": "Hola {{name}}!\nBienvenido de nuevo!",
+			"subtitle": "Inicia sesión para continuar",
+			"email": {
+				"label": "Email",
+				"placeholder": "Ingresa tu email"
+			},
+			"password": {
+				"label": "Contraseña",
+				"placeholder": "Ingresa tu contraseña",
+				"show": "Mostrar contraseña",
+				"hide": "Ocultar contraseña",
+				"forgot": "> ¿Olvidaste tu contraseña?",
+				"validation": {
+					"required": "La contraseña es obligatoria",
+					"min": "La contraseña debe tener al menos {{min}} caracteres"
+				}
+			},
+			"button": {
+				"submit": "Iniciar Sesión",
+				"loading": "Iniciando sesión..."
+			},
+			"error": {
+				"invalid": "Email o contraseña inválidos",
+				"generic": "Ocurrió un error. Por favor, intenta de nuevo."
+			}
+		},
+		"forgotPassword": {
+			"title": "Restablecer Contraseña",
+			"subtitle": "Ingresa tu email para recibir el enlace de restablecimiento",
+			"success": "Hemos enviado un enlace de restablecimiento a tu email:",
+			"resend": {
+				"text": "¿No recibiste el email?",
+				"button": "Reenviar email"
+			},
+			"button": {
+				"submit": "Enviar Enlace de Restablecimiento",
+				"loading": "Enviando..."
+			}
+		},
+		"common": {
+			"or": "o",
+			"back": "Volver al inicio de sesión",
+			"cancel": "Cancelar",
+			"continue": "Continuar",
+			"edit": "Editar",
+			"error": {
+				"generic": "Algo salió mal"
+			}
+		}
+	}
+}

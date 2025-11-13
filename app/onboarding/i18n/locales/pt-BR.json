@@ -1,0 +1,127 @@
+{
+	"s": {
+		"step01": {
+			"title": "Olá, bem-vindo!",
+			"subtitle": "Confirme ou escolha seu idioma",
+			"button": {
+				"continue": "Continuar"
+			},
+			"validation": {
+				"selectLanguage": "Por favor, selecione um idioma"
+			},
+			"terms": {
+				"text": "Ao clicar em continuar, você concorda com os {{termsLink}} e a {{privacyLink}} do TRG - Terapia de Reprocessamento Generativo",
+				"termsLink": "Termos e Condições",
+				"privacyLink": "Política de Privacidade"
+			}
+		},
+		"step02": {
+			"title": "Vamos começar?",
+			"subtitle": "Para fazermos o melhor por você, precisamos saber algumas informações:",
+			"fields": {
+				"name": {
+					"placeholder": "Nome",
+					"error": "O nome é obrigatório"
+				},
+				"email": {
+					"placeholder": "Email",
+					"error": "O e-mail é obrigatório",
+					"invalid": "Digite um e-mail válido"
+				},
+				"phone": {
+					"placeholder": "Celular",
+					"error": "O celular é obrigatório"
+				}
+			},
+			"button": {
+				"continue": "Continuar",
+				"back": "Voltar"
+			}
+		},
+		"step03": {
+			"title": "Confirmação de Email",
+			"subtitle": "Enviado para:",
+			"email": {
+				"edit": "Editar",
+				"resend": {
+					"text": "Não recebeu o código?",
+					"link": "Enviar de novo"
+				}
+			},
+			"button": {
+				"confirm": "Confirmar",
+				"back": "Voltar"
+			}
+		},
+		"step04": {
+			"title": "Confirmação de Celular",
+			"subtitle": "Enviado para:",
+			"phone": {
+				"edit": "Editar",
+				"resend": {
+					"text": "Não recebeu o código?",
+					"link": "Enviar de novo"
+				}
+			},
+			"button": {
+				"confirm": "Confirmar",
+				"back": "Voltar"
+			}
+		},
+		"step05": {
+			"title": "Habilite suas Notificações",
+			"description": "É muito importante você habilitar as notificações porque toda nossa comunicação ocorrerá pelo aplicativo.",
+			"button": {
+				"allow": "Permitir notificações",
+				"skip": "Agora não"
+			}
+		},
+		"step06": {
+			"title": "Como a TRG funciona?",
+			"button": {
+				"skip": "Pular vídeo"
+			}
+		},
+		"step07": {
+			"title": "Como serão as sessões?",
+			"button": {
+				"skip": "Pular vídeo"
+			}
+		}
+	},
+	"c": {
+		"language_select_bottom_sheet": {
+			"title": "Selecione seu idioma",
+			"languages": {
+				"pt_br": "Português do Brasil",
+				"pt_pt": "Português de Portugal",
+				"es": "Espanhol",
+				"en": "Inglês"
+			}
+		},
+		"edit_email_bottom_sheet": {
+			"title": "Edite seu Email:",
+			"placeholder": "Email",
+			"button": {
+				"continue": "Continuar"
+			}
+		},
+		"edit_phone_bottom_sheet": {
+			"title": "Edite seu Celular:",
+			"placeholder": "Celular",
+			"button": {
+				"continue": "Continuar"
+			}
+		},
+		"confirmation_info_bottom_sheet": {
+			"help_text": "Por que essa confirmação é importante?",
+			"title": "Por que eu preciso confirmar meu e-mail e meu celular?",
+			"description": {
+				"security": "Essas informações são importantes par garantir a seguraça da sua conta, facilitar o seu acesso ao aplicativo e permitir uma comunicação eficiente com você.",
+				"usage": "Utilizaremos seu e-mail para envio de informações relevantes, e o número de celular para autenticação e possíveis atualizações.",
+				"privacy": "Seus dados serão tratado com total sigilo e segurança, conforme nossa política de privacidade."
+			},
+			"privacy_policy": "Conheça nossa Política de Privacidade"
+		}
+	}
+}

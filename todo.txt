@@ -1,0 +1,15 @@
+
+
+- logar com email ou telefone
+
+- efeito light para falar
+
+
+
+- remover diretórios da config de rotas do expo
+
+- adicionar prefixo T para types
+
+- usar expo-audio ao invés de expo-av
+
+- melhorar código hook useRealtimeSession

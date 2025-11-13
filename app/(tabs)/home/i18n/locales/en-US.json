@@ -1,0 +1,31 @@
+{
+	"s": {
+		"home": {
+			"welcome": {
+				"title": "Welcome",
+				"description": "Start your sessions to process emotions, relieve tension, promote self-confidence and well-being.",
+				"support": "We're here to listen and support you whenever and wherever you want."
+			},
+			"buttons": {
+				"startSession": "Start session now",
+				"scheduleSession": "Schedule session"
+			}
+		}
+	},
+	"c": {
+		"schedule_session_bottom_sheet": {
+			"title": "Schedule your sessions",
+			"date": {
+				"label": "Choose a date:",
+				"placeholder": "Select a date"
+			},
+			"time": {
+				"label": "Choose a time:",
+				"select": "Select time",
+				"cancel": "Cancel",
+				"confirm": "Confirm"
+			},
+			"button": "Schedule"
+		}
+	}
+}

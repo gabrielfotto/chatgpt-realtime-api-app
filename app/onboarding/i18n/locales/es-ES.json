@@ -1,0 +1,127 @@
+{
+	"s": {
+		"step01": {
+			"title": "¡Hola, bienvenido!",
+			"subtitle": "Confirma o elige tu idioma",
+			"button": {
+				"continue": "Continuar"
+			},
+			"validation": {
+				"selectLanguage": "Por favor, selecciona un idioma"
+			},
+			"terms": {
+				"text": "Al hacer clic en continuar, aceptas los {{termsLink}} y la {{privacyLink}} de TRG - Terapia de Reprocesamiento Generativo",
+				"termsLink": "Términos y Condiciones",
+				"privacyLink": "Política de Privacidad"
+			}
+		},
+		"step02": {
+			"title": "¿Empezamos?",
+			"subtitle": "Para hacer lo mejor por ti, necesitamos saber algunas informaciones:",
+			"fields": {
+				"name": {
+					"placeholder": "Nombre",
+					"error": "El nombre es obligatorio"
+				},
+				"email": {
+					"placeholder": "Correo electrónico",
+					"error": "El correo electrónico es obligatorio",
+					"invalid": "Ingrese un correo electrónico válido"
+				},
+				"phone": {
+					"placeholder": "Teléfono",
+					"error": "El teléfono es obligatorio"
+				}
+			},
+			"button": {
+				"continue": "Continuar",
+				"back": "Volver"
+			}
+		},
+		"step03": {
+			"title": "Confirmación de Correo Electrónico",
+			"subtitle": "Enviado a:",
+			"email": {
+				"edit": "Editar",
+				"resend": {
+					"text": "¿No recibiste el código?",
+					"link": "Enviar de nuevo"
+				}
+			},
+			"button": {
+				"confirm": "Confirmar",
+				"back": "Volver"
+			}
+		},
+		"step04": {
+			"title": "Confirmación de Teléfono",
+			"subtitle": "Enviado a:",
+			"phone": {
+				"edit": "Editar",
+				"resend": {
+					"text": "¿No recibiste el código?",
+					"link": "Enviar de nuevo"
+				}
+			},
+			"button": {
+				"confirm": "Confirmar",
+				"back": "Volver"
+			}
+		},
+		"step05": {
+			"title": "Habilita las Notificaciones",
+			"description": "Es muy importante que habilites las notificaciones porque toda nuestra comunicación ocurrirá a través de la aplicación.",
+			"button": {
+				"allow": "Permitir notificaciones",
+				"skip": "Ahora no"
+			}
+		},
+		"step06": {
+			"title": "¿Cómo funciona la TRG?",
+			"button": {
+				"skip": "Saltar video"
+			}
+		},
+		"step07": {
+			"title": "¿Cómo serán las sesiones?",
+			"button": {
+				"skip": "Saltar video"
+			}
+		}
+	},
+	"c": {
+		"language_select_bottom_sheet": {
+			"title": "Selecciona tu idioma",
+			"languages": {
+				"pt_br": "Portugués de Brasil",
+				"pt_pt": "Portugués de Portugal",
+				"es": "Español",
+				"en": "Inglés"
+			}
+		},
+		"edit_email_bottom_sheet": {
+			"title": "Edita tu correo electrónico:",
+			"placeholder": "Correo electrónico",
+			"button": {
+				"continue": "Continuar"
+			}
+		},
+		"edit_phone_bottom_sheet": {
+			"title": "Edita tu teléfono:",
+			"placeholder": "Teléfono",
+			"button": {
+				"continue": "Continuar"
+			}
+		},
+		"confirmation_info_bottom_sheet": {
+			"help_text": "¿Por qué es importante esta confirmación?",
+			"title": "¿Por qué necesito confirmar mi correo electrónico y mi teléfono?",
+			"description": {
+				"security": "Esta información es importante para garantizar la seguridad de tu cuenta, facilitar tu acceso a la aplicación y permitir una comunicación eficiente contigo.",
+				"usage": "Utilizaremos tu correo electrónico para enviar información relevante, y tu número de teléfono para autenticación y posibles actualizaciones.",
+				"privacy": "Tus datos serán tratados con total confidencialidad y seguridad, según nuestra política de privacidad."
+			},
+			"privacy_policy": "Conoce nuestra Política de Privacidad"
+		}
+	}
+}

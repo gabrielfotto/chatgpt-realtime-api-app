@@ -1,0 +1,54 @@
+{
+	"s": {
+		"login": {
+			"title": "Olá {{name}}!\nBem-vindo de volta!",
+			"subtitle": "Para continuar, faça seu login",
+			"email": {
+				"label": "Email",
+				"placeholder": "Digite seu email"
+			},
+			"password": {
+				"label": "Senha",
+				"placeholder": "Digite sua senha",
+				"show": "Mostrar senha",
+				"hide": "Ocultar senha",
+				"forgot": "> Esqueceu a senha?",
+				"validation": {
+					"required": "Senha é obrigatória",
+					"min": "A senha deve ter pelo menos {{min}} caracteres"
+				}
+			},
+			"button": {
+				"submit": "Entrar",
+				"loading": "Entrando..."
+			},
+			"error": {
+				"invalid": "Email ou senha inválidos",
+				"generic": "Ocorreu um erro. Por favor, tente novamente."
+			}
+		},
+		"forgotPassword": {
+			"title": "Redefinição de Senha",
+			"subtitle": "Digite seu email para receber o link de redefinição de senha",
+			"success": "Enviamos um link de redefinição de senha para o email:",
+			"resend": {
+				"text": "Não recebeu o email?",
+				"button": "Reenviar email"
+			},
+			"button": {
+				"submit": "Enviar Link de Redefinição",
+				"loading": "Enviando..."
+			}
+		},
+		"common": {
+			"or": "ou",
+			"back": "Voltar para login",
+			"cancel": "Cancelar",
+			"continue": "Continuar",
+			"edit": "Editar",
+			"error": {
+				"generic": "Algo deu errado"
+			}
+		}
+	}
+}

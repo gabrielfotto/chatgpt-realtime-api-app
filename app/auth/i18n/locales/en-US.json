@@ -1,0 +1,54 @@
+{
+	"s": {
+		"login": {
+			"title": "Hello {{name}}!\nWelcome back!",
+			"subtitle": "Sign in to continue",
+			"email": {
+				"label": "Email",
+				"placeholder": "Enter your email"
+			},
+			"password": {
+				"label": "Password",
+				"placeholder": "Enter your password",
+				"show": "Show password",
+				"hide": "Hide password",
+				"forgot": "> Forgot password?",
+				"validation": {
+					"required": "Password is required",
+					"min": "Password must be at least {{min}} characters"
+				}
+			},
+			"button": {
+				"submit": "Sign In",
+				"loading": "Signing in..."
+			},
+			"error": {
+				"invalid": "Invalid email or password",
+				"generic": "An error occurred. Please try again."
+			}
+		},
+		"forgotPassword": {
+			"title": "Reset Password",
+			"subtitle": "Enter your email to receive a password reset link",
+			"success": "We've sent a password reset link to your email:",
+			"resend": {
+				"text": "Didn't receive the email?",
+				"button": "Resend email"
+			},
+			"button": {
+				"submit": "Send Reset Link",
+				"loading": "Sending..."
+			}
+		},
+		"common": {
+			"or": "or",
+			"back": "Back to login",
+			"cancel": "Cancel",
+			"continue": "Continue",
+			"edit": "Edit",
+			"error": {
+				"generic": "Something went wrong"
+			}
+		}
+	}
+}

@@ -1,0 +1,127 @@
+{
+	"s": {
+		"step01": {
+			"title": "Hello, welcome!",
+			"subtitle": "Confirm or choose your language",
+			"button": {
+				"continue": "Continue"
+			},
+			"validation": {
+				"selectLanguage": "Please select a language"
+			},
+			"terms": {
+				"text": "By clicking continue, you agree to the {{termsLink}} and {{privacyLink}} of TRG - Generative Reprocessing Therapy",
+				"termsLink": "Terms and Conditions",
+				"privacyLink": "Privacy Policy"
+			}
+		},
+		"step02": {
+			"title": "Shall we begin?",
+			"subtitle": "To do our best for you, we need to know some information:",
+			"fields": {
+				"name": {
+					"placeholder": "Name",
+					"error": "Name is required"
+				},
+				"email": {
+					"placeholder": "Email",
+					"error": "Email is required",
+					"invalid": "Please enter a valid email"
+				},
+				"phone": {
+					"placeholder": "Phone",
+					"error": "Phone is required"
+				}
+			},
+			"button": {
+				"continue": "Continue",
+				"back": "Back"
+			}
+		},
+		"step03": {
+			"title": "Email Confirmation",
+			"subtitle": "Sent to:",
+			"email": {
+				"edit": "Edit",
+				"resend": {
+					"text": "Didn't receive the code?",
+					"link": "Send again"
+				}
+			},
+			"button": {
+				"confirm": "Confirm",
+				"back": "Back"
+			}
+		},
+		"step04": {
+			"title": "Phone Confirmation",
+			"subtitle": "Sent to:",
+			"phone": {
+				"edit": "Edit",
+				"resend": {
+					"text": "Didn't receive the code?",
+					"link": "Send again"
+				}
+			},
+			"button": {
+				"confirm": "Confirm",
+				"back": "Back"
+			}
+		},
+		"step05": {
+			"title": "Enable Notifications",
+			"description": "It's very important that you enable notifications because all our communication will occur through the app.",
+			"button": {
+				"allow": "Allow notifications",
+				"skip": "Not now"
+			}
+		},
+		"step06": {
+			"title": "How does TRG work?",
+			"button": {
+				"skip": "Skip video"
+			}
+		},
+		"step07": {
+			"title": "How will the sessions be?",
+			"button": {
+				"skip": "Skip video"
+			}
+		}
+	},
+	"c": {
+		"language_select_bottom_sheet": {
+			"title": "Select your language",
+			"languages": {
+				"pt_BR": "Brazilian Portuguese",
+				"pt_PT": "European Portuguese",
+				"es": "Spanish",
+				"en": "English"
+			}
+		},
+		"edit_email_bottom_sheet": {
+			"title": "Edit your Email:",
+			"placeholder": "Email",
+			"button": {
+				"continue": "Continue"
+			}
+		},
+		"edit_phone_bottom_sheet": {
+			"title": "Edit your Phone:",
+			"placeholder": "Phone",
+			"button": {
+				"continue": "Continue"
+			}
+		},
+		"confirmation_info_bottom_sheet": {
+			"help_text": "Why is this confirmation important?",
+			"title": "Why do I need to confirm my email and phone?",
+			"description": {
+				"security": "This information is important to ensure the security of your account, facilitate your access to the app, and allow efficient communication with you.",
+				"usage": "We will use your email to send relevant information, and your phone number for authentication and possible updates.",
+				"privacy": "Your data will be treated with total confidentiality and security, according to our privacy policy."
+			},
+			"privacy_policy": "Learn about our Privacy Policy"
+		}
+	}
+}

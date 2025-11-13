@@ -1,0 +1,31 @@
+{
+	"s": {
+		"voice": {
+			"endSession": "End session",
+			"mic": {
+				"disabled": {
+					"connecting": "Connecting...",
+					"agentSpeaking": "Agent is speaking"
+				},
+				"mute": "Mute microphone",
+				"unmute": "Unmute microphone",
+				"clickToSpeak": "Click to speak",
+				"clickToMute": "Click to mute"
+			}
+		}
+	},
+	"c": {
+		"voice_session_connection_animation": {
+			"title": "Connecting",
+			"description": "We're connecting you to your therapist. This may take a few seconds."
+		},
+		"voice_session_animated_circle": {
+			"speakToInterrupt": "Speak to\ninterrupt",
+			"listening": "I'm listening\nto you"
+		},
+		"end_session_bottom_sheet": {
+			"title": "End session",
+			"continue": "Continue session"
+		}
+	}
+}
