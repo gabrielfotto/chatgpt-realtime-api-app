@@ -1,4 +1,4 @@
-package com.gabrielf.otto.chatgptrealtimeapiapp
+package com.gabrielf.otto.lunnarysmobileapp
 
 import android.app.Application
 import android.content.res.Configuration

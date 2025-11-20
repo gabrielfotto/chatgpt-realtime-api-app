@@ -1,4 +1,4 @@
-package com.gabrielf.otto.chatgptrealtimeapiapp
+package com.gabrielf.otto.lunnarysmobileapp
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

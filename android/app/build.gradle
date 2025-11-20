@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.gabrielf.otto.chatgptrealtimeapiapp'
+    namespace 'com.gabrielf.otto.lunnarysmobileapp'
     defaultConfig {
-        applicationId 'com.gabrielf.otto.chatgptrealtimeapiapp'
+        applicationId 'com.gabrielf.otto.lunnarysmobileapp'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
