@@ -1,6 +1,6 @@
 import { IconSymbol } from '@/components/ui/IconSymbol'
 import TabBarBackground from '@/components/ui/TabBarBackground'
-import { Colors } from '@/constants/Colors'
+import { Colors } from '@/constants/colors'
 import { useColorScheme } from '@/hooks/useColorScheme'
 import { BottomTabBarButtonProps } from '@react-navigation/bottom-tabs'
 import { LinearGradient } from 'expo-linear-gradient'

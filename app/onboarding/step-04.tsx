@@ -1,14 +1,6 @@
-import RFConfirmationInfoBottomSheet from '@/app/onboarding/components/RFConfirmationInfoBottomSheet'
-import RFEditPhoneBottomSheet from '@/app/onboarding/components/RFEditPhoneBottomSheet'
-import RFAppLogo from '@/components/RFAppLogo'
-import RFCodeInput from '@/components/RFCodeInput'
-import theme from '@/theme'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
-import { yupResolver } from '@hookform/resolvers/yup'
 import { router } from 'expo-router'
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
 import {
 	KeyboardAvoidingView,
 	Platform,
@@ -17,51 +9,63 @@ import {
 	StyleSheet,
 	View,
 } from 'react-native'
-import { Button, Text, useTheme } from 'react-native-paper'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { TimePickerModal } from 'react-native-paper-dates'
+import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { PrimaryButton } from '@/components/ui/PrimaryButton'
+import { AstrologyInput } from '@/components/ui/AstrologyInput'
+import { ThemedText } from '@/components/ThemedText'
+import { Palette } from '@/constants/colors'
 
-const MIN_CODE_LENGTH = 6
-const MAX_CODE_LENGTH = 6
+const schema = yup.object({
+	birthTime: yup
+		.string()
+		.required('A hora de nascimento é obrigatória')
+		.matches(/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/, 'Formato inválido (hh:mm)'),
+})
+
+type TFormData = yup.InferType<typeof schema>
 
 const OnboardingStep04 = () => {
-	const { t } = useTranslation('onboarding')
-
-	// const schema = yup.object({
-	// 	code: yup
-	// 		.string()
-	// 		.required(t('common:validation.required.code'))
-	// 		.min(
-	// 			MIN_CODE_LENGTH,
-	// 			t('common:validation.length.code', { length: MIN_CODE_LENGTH })
-	// 		)
-	// 		.max(
-	// 			MAX_CODE_LENGTH,
-	// 			t('common:validation.length.code', { length: MAX_CODE_LENGTH })
-	// 		),
-	// })
-
-	const schema = yup.object({
-		code: yup.string().optional(),
-	})
-
-	type TFormData = yup.InferType<typeof schema>
+	const [timePickerVisible, setTimePickerVisible] = useState(false)
+	const [selectedTime, setSelectedTime] = useState<{
+		hours: number
+		minutes: number
+	} | null>(null)
 
 	const {
 		control,
 		handleSubmit,
+		setValue,
+		watch,
 		formState: { errors },
 	} = useForm<TFormData>({
 		resolver: yupResolver(schema),
 		defaultValues: {
-			code: '',
+			birthTime: '',
 		},
 	})
 
-	const handleSubmitData = useCallback((data: TFormData) => {
-		console.log(data)
+	const birthTime = watch('birthTime')
+
+	const onDismiss = () => {
+		setTimePickerVisible(false)
+	}
+
+	const onConfirm = (params: { hours: number; minutes: number }) => {
+		setTimePickerVisible(false)
+		setSelectedTime(params)
+		const timeString = `${String(params.hours).padStart(2, '0')}:${String(
+			params.minutes
+		).padStart(2, '0')}`
+		setValue('birthTime', timeString)
+	}
+
+	const handleSubmitData = (data: TFormData) => {
+		console.log('Hora de nascimento:', data.birthTime)
 		router.push('/onboarding/step-05')
-	}, [])
+	}
 
 	return (
 		<SafeAreaView style={styles.container}>
@@ -74,69 +78,40 @@ const OnboardingStep04 = () => {
 					keyboardShouldPersistTaps="handled"
 					showsVerticalScrollIndicator={false}
 				>
-					<RFAppLogo />
-
 					<View style={styles.content}>
-						<Text
-							variant="titleLarge"
-							style={{ fontWeight: 'bold', color: theme.colors.primary }}
-						>
-							{t('s.step04.title')}
-						</Text>
-						<Text variant="bodyLarge" style={{ marginTop: 5 }}>
-							{t('s.step04.subtitle')}
-						</Text>
-						<View style={styles.sentToContainer}>
-							<Text variant="bodyLarge" style={{ fontWeight: 'bold' }}>
-								{'(62) 9 9326-8355'}
-							</Text>
-							<Text> – </Text>
-							<EditPhoneButton />
+						<ThemedText type="h2" style={styles.title}>
+							Para criar seu mapa astral:
+						</ThemedText>
+
+						<ThemedText type="body1" style={styles.subtitle}>
+							Hora de nascimento
+						</ThemedText>
+
+						<View style={styles.inputContainer}>
+							<Pressable onPress={() => setTimePickerVisible(true)}>
+								<AstrologyInput
+									value={birthTime}
+									onChangeText={() => {}}
+									placeholder="hh:mm"
+									error={errors.birthTime?.message}
+									editable={false}
+								/>
+							</Pressable>
 						</View>
-						<View style={{ marginTop: 36 }}>
-							<Controller
-								control={control}
-								name="code"
-								render={({ field: { onChange, value } }) => (
-									<RFCodeInput
-										value={value}
-										onChange={onChange}
-										error={errors.code?.message}
-									/>
-								)}
-							/>
 
-							<View style={styles.phoneContainer}>
-								<Text variant="bodyMedium">
-									{t('s.step04.phone.resend.text')}
-								</Text>
-								<Text> – </Text>
-								<Pressable onPress={() => {}}>
-									<Text style={styles.resendPhoneLink}>
-										{t('s.step04.phone.resend.link')}
-									</Text>
-								</Pressable>
-							</View>
-
-							<Button
-								mode="contained"
-								onPress={handleSubmit(handleSubmitData)}
-								buttonColor={theme.colors.primary}
-								style={{ marginTop: 8 }}
-							>
-								{t('s.step04.button.confirm')}
-							</Button>
-
-							<Button
-								mode="outlined"
-								style={{ marginTop: 16 }}
-								onPress={() => router.back()}
-							>
-								{t('s.step04.button.back')}
-							</Button>
-
-							<RFConfirmationInfoBottomSheet />
+						<View style={styles.buttonContainer}>
+							<PrimaryButton onPress={handleSubmit(handleSubmitData)}>
+								Continuar
+							</PrimaryButton>
 						</View>
+
+						<TimePickerModal
+							visible={timePickerVisible}
+							onDismiss={onDismiss}
+							onConfirm={onConfirm}
+							hours={selectedTime?.hours || 12}
+							minutes={selectedTime?.minutes || 0}
+						/>
 					</View>
 				</ScrollView>
 			</KeyboardAvoidingView>
@@ -144,39 +119,10 @@ const OnboardingStep04 = () => {
 	)
 }
 
-const EditPhoneButton = () => {
-	const { t } = useTranslation('onboarding')
-	const theme = useTheme()
-	const [isBottomSheetActive, setIsBottomSheetActive] = useState(false)
-
-	return (
-		<View>
-			<Pressable onPress={() => setIsBottomSheetActive(true)}>
-				<View style={styles.editPhoneContainer}>
-					<Text variant="bodyLarge">{t('s.step04.phone.edit')}</Text>
-					<MaterialCommunityIcons
-						name="pencil"
-						size={20}
-						color={theme.colors.primary}
-					/>
-				</View>
-			</Pressable>
-
-			<RFEditPhoneBottomSheet
-				isActive={isBottomSheetActive}
-				onClose={() => setIsBottomSheetActive(false)}
-				onChange={phone => {
-					console.log('Telefone alterado:', phone)
-					setIsBottomSheetActive(false)
-				}}
-			/>
-		</View>
-	)
-}
-
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		backgroundColor: Palette.primary,
 	},
 	keyboardAvoidingView: {
 		flex: 1,
@@ -187,27 +133,23 @@ const styles = StyleSheet.create({
 	content: {
 		flex: 1,
 		justifyContent: 'center',
-		paddingBottom: 24,
+		paddingVertical: 24,
 	},
-	sentToContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		marginTop: 8,
+	title: {
+		color: Palette.textPrimary,
+		marginBottom: 8,
+		textAlign: 'center',
 	},
-	phoneContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		marginBottom: 24,
+	subtitle: {
+		color: Palette.textSecondary,
+		marginBottom: 16,
+		textAlign: 'center',
 	},
-	resendPhoneLink: {
-		color: 'black',
-		textDecorationLine: 'underline',
-		fontWeight: 'bold',
+	inputContainer: {
+		marginBottom: 32,
 	},
-	editPhoneContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		gap: 8,
+	buttonContainer: {
+		width: '100%',
 	},
 })
 

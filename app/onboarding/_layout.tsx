@@ -1,4 +1,5 @@
 import { Stack } from 'expo-router'
+import { Palette } from '@/constants/colors'
 
 export default function OnboardingLayout() {
 	return (
@@ -6,8 +7,8 @@ export default function OnboardingLayout() {
 			screenOptions={{
 				headerShown: false,
 				contentStyle: {
-					paddingHorizontal: 30,
-					backgroundColor: 'white',
+					paddingHorizontal: 24,
+					backgroundColor: Palette.primary,
 				},
 			}}
 		></Stack>

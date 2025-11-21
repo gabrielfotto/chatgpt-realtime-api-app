@@ -1,8 +1,6 @@
-import RFAppLogo from '@/components/RFAppLogo'
-import { yupResolver } from '@hookform/resolvers/yup'
 import { router } from 'expo-router'
+import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
 import {
 	KeyboardAvoidingView,
 	Platform,
@@ -10,37 +8,21 @@ import {
 	StyleSheet,
 	View,
 } from 'react-native'
-import {
-	Button,
-	HelperText,
-	Text,
-	TextInput,
-	useTheme,
-} from 'react-native-paper'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { PrimaryButton } from '@/components/ui/PrimaryButton'
+import { AstrologyInput } from '@/components/ui/AstrologyInput'
+import { ThemedText } from '@/components/ThemedText'
+import { Palette } from '@/constants/colors'
+
+const schema = yup.object({
+	name: yup.string().required('O nome é obrigatório'),
+})
+
+type TFormData = yup.InferType<typeof schema>
 
 const OnboardingStep02 = () => {
-	const { t } = useTranslation('onboarding')
-	const theme = useTheme()
-
-	// const schema = yup.object({
-	// 	name: yup.string().required(t('s.step02.fields.name.error')),
-	// 	email: yup
-	// 		.string()
-	// 		.email(t('s.step02.fields.email.invalid'))
-	// 		.required(t('s.step02.fields.email.error')),
-	// 	phone: yup.string().required(t('s.step02.fields.phone.error')),
-	// })
-
-	const schema = yup.object({
-		name: yup.string().optional(),
-		email: yup.string().optional(),
-		phone: yup.string().optional(),
-	})
-
-	type TFormData = yup.InferType<typeof schema>
-
 	const {
 		control,
 		handleSubmit,
@@ -49,13 +31,11 @@ const OnboardingStep02 = () => {
 		resolver: yupResolver(schema),
 		defaultValues: {
 			name: '',
-			email: '',
-			phone: '',
 		},
 	})
 
-	function handleSubmitData(data: TFormData) {
-		console.log(data)
+	const handleSubmitData = (data: TFormData) => {
+		console.log('Nome:', data.name)
 		router.push('/onboarding/step-03')
 	}
 
@@ -70,102 +50,32 @@ const OnboardingStep02 = () => {
 					keyboardShouldPersistTaps="handled"
 					showsVerticalScrollIndicator={false}
 				>
-					<RFAppLogo />
-
 					<View style={styles.content}>
-						<Text
-							variant="titleLarge"
-							style={{ fontWeight: 'bold', color: theme.colors.primary }}
-						>
-							{t('s.step02.title')}
-						</Text>
-						<Text variant="bodyLarge" style={{ marginTop: 5 }}>
-							{t('s.step02.subtitle')}
-						</Text>
-						<View style={{ marginTop: 36 }}>
+						<ThemedText type="h2" style={styles.title}>
+							Qual é o seu nome?
+						</ThemedText>
+
+						<View style={styles.inputContainer}>
 							<Controller
 								control={control}
 								name="name"
 								render={({ field: { onChange, onBlur, value } }) => (
-									<>
-										<TextInput
-											dense
-											mode="outlined"
-											placeholder={t('s.step02.fields.name.placeholder')}
-											onBlur={onBlur}
-											onChangeText={onChange}
-											value={value}
-											error={!!errors.name}
-											autoCapitalize="words"
-										/>
-										<HelperText type="error" visible={!!errors.name}>
-											{t(errors.name?.message || '')}
-										</HelperText>
-									</>
+									<AstrologyInput
+										value={value}
+										onChangeText={onChange}
+										onBlur={onBlur}
+										placeholder="Digite seu nome"
+										error={errors.name?.message}
+										autoCapitalize="words"
+									/>
 								)}
 							/>
+						</View>
 
-							<Controller
-								control={control}
-								name="email"
-								render={({ field: { onChange, onBlur, value } }) => (
-									<>
-										<TextInput
-											dense
-											mode="outlined"
-											placeholder={t('s.step02.fields.email.placeholder')}
-											keyboardType="email-address"
-											onBlur={onBlur}
-											onChangeText={onChange}
-											value={value}
-											error={!!errors.email}
-											autoCapitalize="none"
-										/>
-										<HelperText type="error" visible={!!errors.email}>
-											{t(errors.email?.message || '')}
-										</HelperText>
-									</>
-								)}
-							/>
-
-							<Controller
-								control={control}
-								name="phone"
-								render={({ field: { onChange, onBlur, value } }) => (
-									<>
-										<TextInput
-											dense
-											mode="outlined"
-											placeholder={t('s.step02.fields.phone.placeholder')}
-											onBlur={onBlur}
-											onChangeText={onChange}
-											value={value}
-											error={!!errors.phone}
-											keyboardType="phone-pad"
-										/>
-										<HelperText type="error" visible={!!errors.phone}>
-											{t(errors.phone?.message || '')}
-										</HelperText>
-									</>
-								)}
-							/>
-
-							<Button
-								mode="contained"
-								buttonColor={theme.colors.primary}
-								style={{ marginTop: 8 }}
-								onPress={handleSubmit(handleSubmitData)}
-							>
-								{t('s.step02.button.continue')}
-							</Button>
-
-							<Button
-								mode="outlined"
-								style={{ marginTop: 16 }}
-								onPress={() => router.back()}
-							>
-								{t('s.step02.button.back')}
-							</Button>
+						<View style={styles.buttonContainer}>
+							<PrimaryButton onPress={handleSubmit(handleSubmitData)}>
+								Próximo
+							</PrimaryButton>
 						</View>
 					</View>
 				</ScrollView>
@@ -177,6 +87,7 @@ const OnboardingStep02 = () => {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		backgroundColor: Palette.primary,
 	},
 	keyboardAvoidingView: {
 		flex: 1,
@@ -187,7 +98,18 @@ const styles = StyleSheet.create({
 	content: {
 		flex: 1,
 		justifyContent: 'center',
-		paddingBottom: 24,
+		paddingVertical: 24,
+	},
+	title: {
+		color: Palette.textPrimary,
+		marginBottom: 32,
+		textAlign: 'center',
+	},
+	inputContainer: {
+		marginBottom: 32,
+	},
+	buttonContainer: {
+		width: '100%',
 	},
 })
 

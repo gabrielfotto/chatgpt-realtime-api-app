@@ -15,6 +15,24 @@ import theme from '@/theme'
 export default function RootLayout() {
 	const colorScheme = useColorScheme()
 	const [loaded] = useFonts({
+		// Fontes do app de astrologia
+		// Nota: As fontes precisam ser baixadas e adicionadas em assets/fonts/
+		// Outfit - para headings
+		'Outfit-Regular': require('@/assets/fonts/Outfit-Regular.ttf'),
+		'Outfit-Medium': require('@/assets/fonts/Outfit-Medium.ttf'),
+		'Outfit-SemiBold': require('@/assets/fonts/Outfit-SemiBold.ttf'),
+		'Outfit-Bold': require('@/assets/fonts/Outfit-Bold.ttf'),
+		// Inter - para body
+		'Inter-Regular': require('@/assets/fonts/Inter_18pt-Regular.ttf'),
+		'Inter-Medium': require('@/assets/fonts/Inter_18pt-Medium.ttf'),
+		'Inter-SemiBold': require('@/assets/fonts/Inter_18pt-SemiBold.ttf'),
+		'Inter-Bold': require('@/assets/fonts/Inter_18pt-Bold.ttf'),
+		// Playfair Display - para títulos místicos
+		'PlayfairDisplay-Regular': require('@/assets/fonts/PlayfairDisplay-Regular.ttf'),
+		'PlayfairDisplay-Medium': require('@/assets/fonts/PlayfairDisplay-Medium.ttf'),
+		'PlayfairDisplay-SemiBold': require('@/assets/fonts/PlayfairDisplay-SemiBold.ttf'),
+		'PlayfairDisplay-Bold': require('@/assets/fonts/PlayfairDisplay-Bold.ttf'),
+		// Mantendo SpaceMono para compatibilidade (pode ser removido depois)
 		SpaceMono: require('@/assets/fonts/SpaceMono-Regular.ttf'),
 	})
 

@@ -1,15 +1,6 @@
-import RFConfirmationInfoBottomSheet from '@/app/onboarding/components/RFConfirmationInfoBottomSheet'
-import RFEditEmailBottomSheet from '@/app/onboarding/components/RFEditEmailBottomSheet'
-import RFCodeInput from '@/components/RFCodeInput'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
-
-import RFAppLogo from '@/components/RFAppLogo'
-import theme from '@/theme'
-import { yupResolver } from '@hookform/resolvers/yup'
 import { router } from 'expo-router'
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
 import {
 	KeyboardAvoidingView,
 	Platform,
@@ -18,51 +9,62 @@ import {
 	StyleSheet,
 	View,
 } from 'react-native'
-import { Button, Text, useTheme } from 'react-native-paper'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { DatePickerModal } from 'react-native-paper-dates'
+import type { SingleChange } from 'react-native-paper-dates/lib/typescript/Date/Calendar'
+import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { PrimaryButton } from '@/components/ui/PrimaryButton'
+import { AstrologyInput } from '@/components/ui/AstrologyInput'
+import { ThemedText } from '@/components/ThemedText'
+import { Palette } from '@/constants/colors'
+// Usando formatação simples sem date-fns por enquanto
+// import { format } from 'date-fns'
+// import { ptBR } from 'date-fns/locale'
 
-const MIN_CODE_LENGTH = 6
-const MAX_CODE_LENGTH = 6
+const schema = yup.object({
+	birthDate: yup.date().required('A data de nascimento é obrigatória'),
+})
+
+type TFormData = yup.InferType<typeof schema>
 
 const OnboardingStep03 = () => {
-	const { t } = useTranslation('onboarding')
-
-	// const schema = yup.object({
-	// 	code: yup
-	// 		.string()
-	// 		.required(t('common:validation.required.code'))
-	// 		.min(
-	// 			MIN_CODE_LENGTH,
-	// 			t('common:validation.length.code', { length: MIN_CODE_LENGTH })
-	// 		)
-	// 		.max(
-	// 			MAX_CODE_LENGTH,
-	// 			t('common:validation.length.code', { length: MAX_CODE_LENGTH })
-	// 		),
-	// })
-
-	const schema = yup.object({
-		code: yup.string().optional(),
-	})
-
-	type TFormData = yup.InferType<typeof schema>
+	const [datePickerVisible, setDatePickerVisible] = useState(false)
 
 	const {
 		control,
 		handleSubmit,
+		setValue,
+		watch,
 		formState: { errors },
 	} = useForm<TFormData>({
 		resolver: yupResolver(schema),
 		defaultValues: {
-			code: '',
+			birthDate: undefined,
 		},
 	})
 
-	const handleSubmitData = useCallback((data: TFormData) => {
-		console.log(data)
+	const birthDate = watch('birthDate')
+
+	const onDismissSingle = () => {
+		setDatePickerVisible(false)
+	}
+
+	const onConfirmSingle: SingleChange = params => {
+		setDatePickerVisible(false)
+		setValue('birthDate', params.date)
+	}
+
+	const handleSubmitData = (data: TFormData) => {
+		console.log('Data de nascimento:', data.birthDate)
 		router.push('/onboarding/step-04')
-	}, [])
+	}
+
+	const formattedDate = birthDate
+		? `${String(birthDate.getDate()).padStart(2, '0')}/${String(
+				birthDate.getMonth() + 1
+		  ).padStart(2, '0')}/${birthDate.getFullYear()}`
+		: ''
 
 	return (
 		<SafeAreaView style={styles.container}>
@@ -75,69 +77,45 @@ const OnboardingStep03 = () => {
 					keyboardShouldPersistTaps="handled"
 					showsVerticalScrollIndicator={false}
 				>
-					<RFAppLogo />
-
 					<View style={styles.content}>
-						<Text
-							variant="titleLarge"
-							style={{ fontWeight: 'bold', color: theme.colors.primary }}
-						>
-							{t('s.step03.title')}
-						</Text>
-						<Text variant="bodyLarge" style={{ marginTop: 5 }}>
-							{t('s.step03.subtitle')}
-						</Text>
-						<View style={styles.sentToContainer}>
-							<Text variant="bodyLarge" style={{ fontWeight: 'bold' }}>
-								{'gabrielf.otto@hotmail.com'}
-							</Text>
-							<Text> – </Text>
-							<EditEmailButton />
+						<ThemedText type="h2" style={styles.title}>
+							Para criar seu mapa astral:
+						</ThemedText>
+
+						<ThemedText type="body1" style={styles.subtitle}>
+							Data de nascimento
+						</ThemedText>
+
+						<View style={styles.inputContainer}>
+							<Pressable onPress={() => setDatePickerVisible(true)}>
+								<AstrologyInput
+									value={formattedDate}
+									onChangeText={() => {}}
+									placeholder="dd/mm/aaaa"
+									error={errors.birthDate?.message}
+									editable={false}
+								/>
+							</Pressable>
 						</View>
-						<View style={{ marginTop: 36 }}>
-							<Controller
-								control={control}
-								name="code"
-								render={({ field: { onChange, value } }) => (
-									<RFCodeInput
-										value={value}
-										onChange={onChange}
-										error={errors.code?.message}
-									/>
-								)}
-							/>
 
-							<View style={styles.emailContainer}>
-								<Text variant="bodyMedium">
-									{t('s.step03.email.resend.text')}
-								</Text>
-								<Text> – </Text>
-								<Pressable onPress={() => {}}>
-									<Text style={styles.resendEmailLink}>
-										{t('s.step03.email.resend.link')}
-									</Text>
-								</Pressable>
-							</View>
-
-							<Button
-								mode="contained"
-								onPress={handleSubmit(handleSubmitData)}
-								buttonColor={theme.colors.primary}
-								style={{ marginTop: 8 }}
-							>
-								{t('s.step03.button.confirm')}
-							</Button>
-
-							<Button
-								mode="outlined"
-								style={{ marginTop: 16 }}
-								onPress={() => router.back()}
-							>
-								{t('s.step03.button.back')}
-							</Button>
-
-							<RFConfirmationInfoBottomSheet />
+						<View style={styles.buttonContainer}>
+							<PrimaryButton onPress={handleSubmit(handleSubmitData)}>
+								Continuar
+							</PrimaryButton>
 						</View>
+
+						<DatePickerModal
+							locale="pt"
+							mode="single"
+							visible={datePickerVisible}
+							onDismiss={onDismissSingle}
+							date={birthDate}
+							onConfirm={onConfirmSingle}
+							validRange={{
+								startDate: new Date(1900, 0, 1),
+								endDate: new Date(),
+							}}
+						/>
 					</View>
 				</ScrollView>
 			</KeyboardAvoidingView>
@@ -145,40 +123,10 @@ const OnboardingStep03 = () => {
 	)
 }
 
-const EditEmailButton = () => {
-	const { t } = useTranslation('onboarding')
-	const theme = useTheme()
-
-	const [isBottomSheetActive, setIsBottomSheetActive] = useState(false)
-
-	return (
-		<View>
-			<Pressable onPress={() => setIsBottomSheetActive(true)}>
-				<View style={styles.editEmailContainer}>
-					<Text variant="bodyLarge">{t('s.step03.email.edit')}</Text>
-					<MaterialCommunityIcons
-						name="pencil"
-						size={20}
-						color={theme.colors.primary}
-					/>
-				</View>
-			</Pressable>
-
-			<RFEditEmailBottomSheet
-				isActive={isBottomSheetActive}
-				onClose={() => setIsBottomSheetActive(false)}
-				onChange={email => {
-					console.log('Email alterado:', email)
-					setIsBottomSheetActive(false)
-				}}
-			/>
-		</View>
-	)
-}
-
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		backgroundColor: Palette.primary,
 	},
 	keyboardAvoidingView: {
 		flex: 1,
@@ -189,27 +137,23 @@ const styles = StyleSheet.create({
 	content: {
 		flex: 1,
 		justifyContent: 'center',
-		paddingBottom: 24,
+		paddingVertical: 24,
 	},
-	sentToContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		marginTop: 8,
+	title: {
+		color: Palette.textPrimary,
+		marginBottom: 8,
+		textAlign: 'center',
 	},
-	emailContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		marginBottom: 24,
+	subtitle: {
+		color: Palette.textSecondary,
+		marginBottom: 16,
+		textAlign: 'center',
 	},
-	resendEmailLink: {
-		color: 'black',
-		textDecorationLine: 'underline',
-		fontWeight: 'bold',
+	inputContainer: {
+		marginBottom: 32,
 	},
-	editEmailContainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
-		gap: 8,
+	buttonContainer: {
+		width: '100%',
 	},
 })
 
